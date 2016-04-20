@@ -51,7 +51,7 @@ print('age ', papa_info_2[1])
 print('kids', papa_info_2[2])
 
 """
-This can work, of course. But we have to remember that #0 is the name, #1 is the age and #3 are the children.
+This can work, of course. But we have to remember that #0 is the name, #1 is the age and #2 are the children.
 And maybe we'll want to add more, or store different things for different people.
 There's a better way (these are two ways to write the same thing):
 """
@@ -65,6 +65,7 @@ print('dictionary way:')
 print('name', papa_info_4['name'])
 print('age ', papa_info_4['age'])
 print('kids', papa_info_4['kids'])
+papa_info_4['name'] = 'Xi'
 
 """
 This is called a 'dictionary', because there are unique words which have some info about what they are.
@@ -90,21 +91,19 @@ This doesn't matter, because we don't care about the 'first value', we care abou
 """
 Now you can make your own dictionary. For example, store the ages of your friends, or the colors or tastiness of fruits.
 """
-ages_of_friends = {}  #todo
-# print('Alice is', ages_of_friends['Alice'], 'years old')
-# print('Sarah is', ages_of_friends['Sarah'], 'years old')
+ages_of_friends = {'Alice':28,'Sarah':27}  #todo
+print('Alice is', ages_of_friends['Alice'], 'years old')
+print('Sarah is', ages_of_friends['Sarah'], 'years old')
 
 fruit_color = {
 	'banana': 'yellow',
 	'pear': 'green',
-	#todo
-}
+	}
 fruit_is_tasty = {
 	'banana': False,
 	'pear': True,
 	'apple': True,
 	'strawberry': True
-	#todo
 }
 
 """
@@ -117,13 +116,17 @@ for name, tasty in fruit_is_tasty.items():
 """
 Your turn! Show all fruits that have the same color as a pear.
 """
-#todo
-
+for name, color in fruit_color.items():
+	if color == fruit_color['pear']:
+		print(name, 'has the same color with pear')
 
 """
 Now show all friends who are older than a number the user types.
 """
-minimum_age = input('at least how old? ')
-#todo
+minimum_age = float(input('at least how old? '))
+for name,age in ages_of_friends.items():
+	if age>minimum_age:
+		print(name,"is older than",minimum_age)
+
 
 

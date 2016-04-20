@@ -9,8 +9,24 @@ Several steps:
 and gives back (`return`) the sum of this list.
 
 2. Use this function `g` to fill a list with the outcomes for EVEN numbers up to 150.
+
+	[g(2), g(4), g(6), ... g(150)] =
+	[5, 30, 91, ...]
 """
 
 def g(N):
-	return 0
+	all=[]
+	for n in range(1,N+1):
+		q=n**2
+		all.append(q)
+	return sum(all)
+evenlist=[]
+for N in range (2,151):
+	if N%2==0:
+		evenlist.append(g(N))
+print(evenlist)
+print(g(150))
+
+
+
 

@@ -19,9 +19,19 @@ while not limit:
 	except ValueError:
 		print('Sorry, {0} is not a valid number!'.format(answer))
 
+def check_prime(nr):
+	is_prime=True
+	for n in range(2,nr):
+		if nr%n == 0:
+			is_prime=False
+			break
+	return is_prime
 
 for nr in range(1, limit+1):
 	print('checking if {0} is prime'.format(nr))
-	# check here!
+	if check_prime(nr) == True:
+		print('yes it is a prime!')
+	else:
+		print('no it is not a prime :(')
 
 
