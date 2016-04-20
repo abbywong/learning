@@ -17,6 +17,9 @@ brain = data[1:, 2].astype(float)
 names = data[1:, 0]
 for nr, name in enumerate(names):
 	names[nr] = name.strip('"')
+# print(names)
+# print(body)
+# exit()
 
 # transform the data if needed
 lbody = log(body)
@@ -68,7 +71,7 @@ if not result.success:
 	exit()
 
 # show the data in a scatter-plot
-figure, axes = subplots(figsize=(12, 9))
+figure, axes = subplots(figsize=(15, 9))
 axes.scatter(body, brain, label='data', color='blue')
 axes.plot(body_grid, linear_fit, label='linear fit', color='green')
 axes.plot(body_grid, quadratic_fit, label='quadratic fit', color='black')
@@ -88,12 +91,12 @@ for x, y, name in zip(body, brain, names):
 	if name in ['Human', 'Mouse', 'Rat', 'African elephant', 'Brachiosaurus', 'Triceratops', 'Dipliodocus']:
 		axes.annotate(name, (x, y))
 
-# figure, axes = subplots(figsize=(12, 9))
-# axes.scatter(body, exp(nodino_zeroth + nodino_first * lbody) / brain, label='data', color='blue')
-# for x, y, name in zip(body, exp(nodino_zeroth + nodino_first * lbody) / brain, names):
-# 	axes.annotate(name, (x, y))
-# axes.set_xscale('log')
-# axes.set_yscale('log')
+figure, axes = subplots(figsize=(12, 9))
+axes.scatter(body, exp(nodino_zeroth + nodino_first * lbody) / brain, label='data', color='blue')
+for x, y, name in zip(body, exp(nodino_zeroth + nodino_first * lbody) / brain, names):
+	axes.annotate(name, (x, y))
+axes.set_xscale('log')
+axes.set_yscale('log')
 
 # standard trick to display the plots
 if __name__ == '__main__':
