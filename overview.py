@@ -22,6 +22,10 @@ float
 -9999999.999
 float('2.7')
 
+""" exponential notation """
+q = 7.3e5
+print('q =',q)
+
 
 """
 str (text)
@@ -110,4 +114,45 @@ for fruit in fruit_color.keys():
 colors = ' and '.join(fruit_color.values())
 print(colors)
 
+
+"""
+function
+"""
+def sqr(x):
+	return x * x
+
+def pythagoras(a, b):
+	return (a**2 + b**2)**0.5
+
+def say_numbers():
+	for k in range(10):
+		print(k)
+
+def say_word(word='elephant'):
+	print(word)
+
+say_word('apple')
+say_word()
+
+
+"""
+compare
+"""
+if 7 == 3:
+	print('3 and 7 are the same somehow!?')
+else:
+	print('3 and 7 are different')
+
+if 10 > -3.2:
+	print('10 is big!')
+
+"""
+repeat
+"""
+
+
+
+
+#todo import
+#todo class
 
