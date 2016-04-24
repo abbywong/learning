@@ -12,6 +12,7 @@ class Fruit:
 		self.name = name
 		self.color = color
 		self.is_tasty = is_tasty
+		self.is_crushed=False
 
 	def eat(self):
 		"""
@@ -28,6 +29,9 @@ class Fruit:
 		"""
 		self.color = paint_color
 		print(self.name, 'is now', self.color)
+	def crush(self):
+		self.is_crushed=True
+		print(self.name,"pung")
 
 
 """
@@ -50,10 +54,25 @@ for fruit in fruits:
 Now let's paint the bananas red.
 """
 
-# todo: print all RED fruits here
+for fruit in fruits:
+	if fruit.color == 'red':
+		print(fruit.name)
 
 fruits[0].paint(paint_color='red')
 
-# todo: print all RED fruits again
+for fruit in fruits:
+	if fruit.color == 'red':
+		print(fruit.name)
 
+for fruit in fruits:
+	if fruit.is_crushed==True:
+		print(fruit.name, 'is crushed, throw it away!')
 
+fruits[1].crush()
+
+for fruit in fruits:
+	if fruit.is_crushed==True:
+		print(fruit.name, 'is crushed, throw it away!')
+for fruit in fruits:
+	if fruit.is_tasty==False:
+		fruit.crush()
