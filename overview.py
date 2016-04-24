@@ -40,11 +40,13 @@ str(7)
 word = '王博士'
 letter = word[0]
 name = '王' + '贝贝'
+print(word, 'has', len(word), 'letters')
 
 """ separate parts: """
 line = 'elephants are really big'
 words = line.split(' ')
 print(words)
+print(line, 'has', len(word), 'letters')
 
 """ put back together """
 words.append('animals')
@@ -71,10 +73,12 @@ list (a collection of other things)
 [0, 1, 2, 'baba']
 [['a', 'b', 'c'], [1, 2, 3]]
 family = ['baba', 'mama', 'gege', 'saozi']
+print('family has', len(family), 'people')
 
 """ make list of numbers automatically """
 nrs = list(range(5, 12))
 print(nrs)
+print('there are', len(nrs), 'numbers')
 
 """ change a list """
 nrs.append(12)
@@ -131,6 +135,7 @@ def say_numbers():
 def say_word(word='elephant'):
 	print(word)
 
+say_word(word='pie')
 say_word('apple')
 say_word()
 
@@ -146,13 +151,56 @@ else:
 if 10 > -3.2:
 	print('10 is big!')
 
+if 'we' in 'team':
+	print('"team" contains "we"')
+
 """
 repeat
 """
+""" while """
+k = 0
+while k**2 <= 100:
+	k += 2
+print(k, ' is the first even number whose square is larger than 100')
 
+greetings = []
+while len(greetings) < 10:
+	greetings.append('hi')
+print(greetings)
+
+""" for """
+face = ['eyes', 'ears', 'hair', 'nose', 'mouth']
+for part in face:
+	if 'e' in part:
+		print(part, 'is a face part containing "e"')
+
+
+"""
+class
+"""
+class Person:
+	def __init__(self, name, age, is_nice=True, favorite_numbers=[42, 37]):
+		self.name = name
+		self.age = int(age)
+		self.is_nice = is_nice
+		self.favorite_numbers = favorite_numbers
+		self.is_alive = True
+
+	def birthday(self):
+		self.age += 1
+		print('happy', self.age, 'birthday to', self.name)
+
+	def add_favorite_number(self, nr):
+		self.favorite_numbers.append(nr)
+
+mark = Person('Mark', 27)
+mark.add_favorite_number(nr=0)
+mark.add_favorite_number(0)
+beibei = Person('贝贝', 27)
+beibei.is_nice = True
+beibei.birthday()
 
 
 
 #todo import
-#todo class
 
