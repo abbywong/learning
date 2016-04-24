@@ -22,8 +22,13 @@ print(my_fruit['name'], 'is', my_fruit['color'])
 """
 Can you print the name and color of all fruits?
 """
-#todo
+fruits=[banana, pear]
+L=len(fruits)
+for beibei_is_a_sexy_girl in range(0, L-1):
+		print(fruits[beibei_is_a_sexy_girl]['name'], 'is', fruits[beibei_is_a_sexy_girl]['color'])
 
+for fruit in fruits:
+		print(fruit['name'], 'is', fruit['color'])
 
 """
 There exists another way to write the above type of thing. It's more confusing now, but much more convenient later.
@@ -53,7 +58,8 @@ print(my_fruit.name, 'is', my_fruit.color)
 """
 Can you print the name and color of all fruits again?
 """
-#todo
+for fruit in fruits:
+	print(fruit.name, 'is', fruit.color)
 
 """
 This is not a very short way to write it. And maybe someone will make a fruit without name. Let's solve that!
@@ -73,16 +79,16 @@ Now we make fruits like this:
 """
 banana = Fruit2(name='banana', color='yellow', is_tasty=False)
 pear = Fruit2(name='pear', color='green', is_tasty=True)
+strawberry = Fruit2(name='strawberry', color='red',is_tasty=True)
+fruits=[banana,pear,strawberry]
+for fruit in fruits:
+	print(fruit.name, 'is', fruit.color)
 
-"""
-Test that you can still print all fruits the same way as before!
-"""
-#todo
 
 """
 Also test what happens if you make a fruit without name. It should not be allowed!
 """
-#todo
+
 
 
 

@@ -13,3 +13,16 @@ while L<=150:
 	nrs.append(newone)
 	L=len(nrs)
 print(nrs)
+
+def fib(x):
+	# list=[]
+	if x<=2:
+		return 1
+	return fib(x-2)+fib(x-1)
+print(fib(3))
+print(fib(8))
+for x in range(20):
+	print(fib(x))
+#todo: make faster
+
+# print(list(4-1).append.fib(4))
