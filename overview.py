@@ -201,6 +201,13 @@ beibei.is_nice = True
 beibei.birthday()
 
 
+"""
+import
+"""
+from math import sqrt
+from os.path import *
 
-#todo import
+print('sqrt(36) =', sqrt(36))
+isfile('C://')  # from os.path
+
 
