@@ -27,7 +27,7 @@ lbrain = log(brain)
 
 # calculate interesting quantities
 correlation_matrix = corrcoef(lbody, lbrain)
-print('the correlation of log data is', correlation_matrix[0][1])
+print('the correlation of log data is', correlation_matrix[1][0])
 heaviest_animal_number = body.argmax()
 print('the heaviest animal is {0}, which weights {1}kg'.format(names[heaviest_animal_number], body[heaviest_animal_number]))
 print('it\'s brain is {0:0f}% of it\'s mass'.format(100 * brain[heaviest_animal_number] / body[heaviest_animal_number]))

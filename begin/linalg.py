@@ -98,7 +98,6 @@ ax.plot(x, y)
 ax.set_title('sin function cool')
 ax.set_xlabel('x')
 ax.set_ylabel('sin(2x+1)')
-
 if __name__ == '__main__':
 	show()
 
