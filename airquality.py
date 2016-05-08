@@ -1,7 +1,6 @@
 
 from matplotlib.pyplot import subplots, show
-from numpy import genfromtxt, corrcoef, log, exp, polyfit, empty, logspace, array
-from scipy.optimize import minimize
+from numpy import genfromtxt, array
 
 
 # load the data file
@@ -35,7 +34,9 @@ names = ['ozone','solar','wind','temp']
 # print(body)
 # exit()
 
-fig, axes = subplots(3, 4, figsize=(12, 9))
+fig, axes = subplots(4,3, figsize=(10, 14))
+
+corrcoef
 
 #print(alldata[:, 1].shape)
 #print(alldata[:, 3].shape)
@@ -43,10 +44,10 @@ for column in range(4):
 	for row in range(4):
 		if column == row:
 			continue
-		elif column < row:
+		elif column > row:
 			ax = axes[column, row]
 		else:
-			ax = axes[column - 1, row]
+			ax = axes[column, row-1]
 		# if column==row:
 		# 	ax.set_delete(False)
 		# 	continue
@@ -56,7 +57,7 @@ for column in range(4):
 		ax.set_xlabel(names[column])
 		ax.set_ylabel(names[row])
 		ax.grid()
-# fig.tight_layout()
+fig.tight_layout()
 
 if __name__ == '__main__':
 	show()
