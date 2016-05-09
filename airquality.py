@@ -1,7 +1,6 @@
 
 from matplotlib.pyplot import subplots, show
-from numpy import genfromtxt, array
-
+from numpy import genfromtxt, array, corrcoef
 
 # load the data file
 data = genfromtxt('data/airquality.csv', delimiter=',', dtype=str)
@@ -34,9 +33,11 @@ names = ['ozone','solar','wind','temp']
 # print(body)
 # exit()
 
-fig, axes = subplots(4,3, figsize=(10, 14))
+fig, axes = subplots(4,3, figsize=(10, 10))
 
-corrcoef
+result=corrcoef(alldata.T)
+print(result.shape)
+print(result)
 
 #print(alldata[:, 1].shape)
 #print(alldata[:, 3].shape)
@@ -46,17 +47,20 @@ for column in range(4):
 			continue
 		elif column > row:
 			ax = axes[column, row]
+		# ax.set_title(result[column,row])
 		else:
 			ax = axes[column, row-1]
+			# ax.set_title(result[column,row])
+		ax.set_title('corr: {corr:4.2f}'.format(corr=result[column,row]))
 		# if column==row:
 		# 	ax.set_delete(False)
 		# 	continue
 		# print(column,row)
 		ax.scatter(alldata[:, column], alldata[:, row])
-		ax.set_title('')
 		ax.set_xlabel(names[column])
 		ax.set_ylabel(names[row])
 		ax.grid()
+
 fig.tight_layout()
 
 if __name__ == '__main__':
