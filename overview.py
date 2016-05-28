@@ -118,6 +118,9 @@ for fruit in fruit_color.keys():
 colors = ' and '.join(fruit_color.values())
 print(colors)
 
+print(papa_info.keys())
+print(len(papa_info))
+
 
 """
 function
@@ -135,6 +138,8 @@ def say_numbers():
 def say_word(word='elephant'):
 	print(word)
 
+pythagoras(a=3, b=4)
+pythagoras(3, 4)
 say_word(word='pie')
 say_word('apple')
 say_word()
@@ -151,8 +156,8 @@ else:
 if 10 > -3.2:
 	print('10 is big!')
 
-if 'we' in 'team':
-	print('"team" contains "we"')
+if 'I' in 'team':
+	print('"team" contains "I"')
 
 """
 repeat
@@ -161,7 +166,7 @@ repeat
 k = 0
 while k**2 <= 100:
 	k += 2
-print(k, ' is the first even number whose square is larger than 100')
+print(k, 'is the first even number whose square is larger than 100')
 
 greetings = []
 while len(greetings) < 10:
@@ -196,7 +201,7 @@ class Person:
 mark = Person('Mark', 27)
 mark.add_favorite_number(nr=0)
 mark.add_favorite_number(0)
-beibei = Person('贝贝', 27)
+beibei = Person('贝贝', 27, is_nice=False)
 beibei.is_nice = True
 beibei.birthday()
 
@@ -205,9 +210,9 @@ beibei.birthday()
 import
 """
 from math import sqrt
-from os.path import *
+from os.path import isfile, exists
 
 print('sqrt(36) =', sqrt(36))
 isfile('C://')  # from os.path
-
+exists('C://')  # alt+enter
 
