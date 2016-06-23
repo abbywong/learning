@@ -20,7 +20,7 @@ frame_cnt = 70
 """
 Create data structures.
 """
-amount = zeros(image.shape[:2], dtype=int)
+amount = zeros(image.shape[:2])
 xflow_spd = zeros(image.shape[:2])
 yflow_spd = zeros(image.shape[:2])
 body_xy = where(image[:-1, :-1, -1] == 255)
